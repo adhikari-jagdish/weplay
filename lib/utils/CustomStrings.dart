@@ -17,4 +17,19 @@ class CustomStrings {
   static const String BOOKINGS = "Bookings";
   static const String CANCELLED = "Cancelled";
   static const String NOSHOW = "No-Show";
+
+  static const String ABOUT = "ABOUT";
+  static const String POSITION = "Position";
+  static const String FULLNAME_TEXT = "Full name";
+  static const String USERNAME_TEXT = "Username";
+  static const String BIRTHDATE_TEXT = "Birthdate";
+  static const String BIRTHDATE_VALUE = "1997/ 09 /17";
+  static const String PHONENUMBER_TEXT = "Phone Number";
+  static const String PHONENUMBER_VALUE = "9806269459";
+  static const String PASSWORD_TEXT = "Password";
+  static const String PASSWORD_VALUE = "*********";
+  static const String MEMBERSINCE_TEXT = "Member Since";
+  static const String MEMBERSINCE_VALUE = "3 May, 2020";
+  static const String ADDRESS_TEXT = "Address";
+  static const String ADDRESS_VALUE = "Babarmahal";
 }

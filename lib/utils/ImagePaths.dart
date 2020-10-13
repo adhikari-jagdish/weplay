@@ -13,4 +13,7 @@ class ImagePaths {
       "assets/image/weplay_profile_image.jpg";
 
   static final String ICON_MAP = "assets/image/icon_map.png";
+  static final String ICON_FUTSAL = "assets/image/icon_futsal.png";
+  static final String ICON_COURT = "assets/image/icon_court.png";
+  static final String IMAGE_COMING_SOON = "assets/image/image_coming_soon.png";
 }

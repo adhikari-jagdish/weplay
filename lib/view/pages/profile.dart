@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:weplay/utils/CustomStrings.dart';
 import 'package:weplay/utils/ImagePaths.dart';
+import 'package:weplay/view/widgets/aboutText.dart';
 import 'package:weplay/view/widgets/bookings.dart';
 import 'package:weplay/view/widgets/gamesList.dart';
 
@@ -14,10 +15,14 @@ class Profile extends StatefulWidget {
 }
 
 class _ProfileState extends State<Profile> {
+  TextEditingController _usernameController, _nameController;
+
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
+    _usernameController = TextEditingController();
+    _nameController = TextEditingController();
   }
 
   @override
@@ -46,6 +51,8 @@ class _ProfileState extends State<Profile> {
                   _location(),
                   _bookingSummarycards(),
                   _gamesList(),
+                  _aboutPlayer(),
+                  _bottomSoonImage()
                 ],
               )),
             ],
@@ -187,11 +194,10 @@ class _ProfileState extends State<Profile> {
           right: 20.0,
           left: 20.0),
       child: new Container(
-        height: MediaQuery.of(context).size.height,
+        height: 90.0,
         width: MediaQuery.of(context).size.width,
         child: ListView(
           scrollDirection: Axis.horizontal,
-
           children: <Widget>[
             GamesList(
               name: "Cash",
@@ -212,6 +218,145 @@ class _ProfileState extends State<Profile> {
               position: r"$100.33",
             ),
           ],
+        ),
+      ),
+    );
+  }
+
+  Widget _aboutPlayer() {
+    return Card(
+      margin: EdgeInsets.all(10),
+      elevation: 3.0,
+      // this field changes the shadow of the card 1.0 is default
+      shape: RoundedRectangleBorder(
+          side: BorderSide(width: 0.2),
+          borderRadius: BorderRadius.circular(10)),
+      child: Padding(
+        padding: EdgeInsets.all(15.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Text(
+              CustomStrings.ABOUT,
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  decorationThickness: 0.5,
+                  fontSize: 20.0,
+                  color: Colors.black),
+            ),
+            Divider(
+              color: Colors.grey,
+              height: 15,
+              thickness: 0.5,
+            ),
+            Padding(
+              padding: EdgeInsets.fromLTRB(0, 10.0, 0, 10.0),
+              child: Row(
+                children: [
+                  _aboutColumnOne(),
+                  SizedBox(
+                    width: 40.0,
+                  ),
+                  _aboutColumnTwo()
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _aboutColumnOne() {
+    return Column(
+      children: [
+        Container(
+          width: 170.0,
+          height: 250.0,
+          decoration: BoxDecoration(
+            shape: BoxShape.rectangle,
+            image: DecorationImage(
+                image: ExactAssetImage(ImagePaths.ICON_COURT),
+                fit: BoxFit.fill),
+          ),
+        ),
+        SizedBox(
+          height: 35.0,
+        ),
+        AboutText(
+          title: CustomStrings.POSITION,
+          value: CustomStrings.GOALKEEPER,
+        ),
+      ],
+    );
+  }
+
+  Widget _aboutColumnTwo() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        AboutText(
+          title: CustomStrings.FULLNAME_TEXT,
+          value: CustomStrings.FULLNAME,
+        ),
+        SizedBox(
+          height: 10.0,
+        ),
+        AboutText(
+          title: CustomStrings.USERNAME_TEXT,
+          value: CustomStrings.USERNAME,
+        ),
+        SizedBox(
+          height: 10.0,
+        ),
+        AboutText(
+          title: CustomStrings.BIRTHDATE_TEXT,
+          value: CustomStrings.BIRTHDATE_VALUE,
+        ),
+        SizedBox(
+          height: 10.0,
+        ),
+        AboutText(
+          title: CustomStrings.PHONENUMBER_TEXT,
+          value: CustomStrings.PHONENUMBER_VALUE,
+        ),
+        SizedBox(
+          height: 10.0,
+        ),
+        AboutText(
+          title: CustomStrings.PASSWORD_TEXT,
+          value: CustomStrings.PASSWORD_VALUE,
+        ),
+        SizedBox(
+          height: 10.0,
+        ),
+        AboutText(
+          title: CustomStrings.MEMBERSINCE_TEXT,
+          value: CustomStrings.MEMBERSINCE_VALUE,
+        ),
+        SizedBox(
+          height: 10.0,
+        ),
+        AboutText(
+          title: CustomStrings.ADDRESS_TEXT,
+          value: CustomStrings.ADDRESS_VALUE,
+        ),
+      ],
+    );
+  }
+
+  ///Bottom Image Widget
+  Widget _bottomSoonImage() {
+    return Padding(
+      padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 20.0),
+      child: Container(
+        width: MediaQuery.of(context).size.width,
+        height: 150.0,
+        decoration: BoxDecoration(
+          shape: BoxShape.rectangle,
+          image: DecorationImage(
+              image: ExactAssetImage(ImagePaths.IMAGE_COMING_SOON),
+              fit: BoxFit.fill),
         ),
       ),
     );

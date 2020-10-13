@@ -18,7 +18,6 @@ class Bookings extends StatelessWidget {
       child: InkWell(
         onTap: () => print("tapped"),
         child: Container(
-
           padding: EdgeInsets.only(top: 5.0, bottom: 0.0, right: 15.0),
           decoration: BoxDecoration(
             color: Colors.white,

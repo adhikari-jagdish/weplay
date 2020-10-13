@@ -19,10 +19,10 @@ class GamesList extends StatelessWidget {
           width: 70.0,
           height: 70.0,
           decoration: BoxDecoration(
-            shape: BoxShape.circle,
+            shape: BoxShape.rectangle,
             image: DecorationImage(
-                image: ExactAssetImage(ImagePaths.WEPLAY_PROFILE_IMAGE),
-                fit: BoxFit.cover),
+                image: ExactAssetImage(ImagePaths.ICON_FUTSAL),
+                fit: BoxFit.fill),
           ),
         ),
         SizedBox(width: 25.0),
