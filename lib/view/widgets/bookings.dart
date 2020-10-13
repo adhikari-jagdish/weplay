@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Bookings extends StatelessWidget {
@@ -18,7 +19,7 @@ class Bookings extends StatelessWidget {
       child: InkWell(
         onTap: () => print("tapped"),
         child: Container(
-          padding: EdgeInsets.only(top: 5.0, bottom: 0.0, right: 15.0),
+          padding: EdgeInsets.only(top: 5.0, bottom: 0.0, right: 10.0),
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(40.0),
@@ -37,19 +38,25 @@ class Bookings extends StatelessWidget {
                           name,
                           style: TextStyle(
                             fontSize: 16.0,
-                            color: Colors.deepPurple[400],
+                            color: Colors.blue[600],
                           ),
                         ),
-                        SizedBox(height: 10.0),
-                        Text(
-                          "$amount",
-                          textAlign: TextAlign.right,
-                          style: TextStyle(
-                            fontSize: 28.0,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.deepPurple[800],
-                          ),
-                        ),
+                        SizedBox(height: 20.0),
+                        Row(
+                          children: [
+                            SizedBox(
+                              width: 50.0,
+                            ),
+                            Text(
+                              amount,
+                              style: TextStyle(
+                                fontSize: 40.0,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.blue[800],
+                              ),
+                            ),
+                          ],
+                        )
                       ],
                     ),
                   ],

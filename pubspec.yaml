@@ -67,6 +67,10 @@ flutter:
     - family: Schyler
       fonts:
         - asset: fonts/Rubik-Regular.ttf
+
+    - family: MyCustomIcons
+      fonts:
+        - asset: fonts/palsIcon.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro

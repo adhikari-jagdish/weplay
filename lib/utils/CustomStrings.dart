@@ -32,4 +32,10 @@ class CustomStrings {
   static const String MEMBERSINCE_VALUE = "3 May, 2020";
   static const String ADDRESS_TEXT = "Address";
   static const String ADDRESS_VALUE = "Babarmahal";
+
+  static const String FUTSAL = "Futsal";
+  static const String FOOTBALL = "Football";
+  static const String CRICKET = "Cricket";
+  static const String FORWARD = "Forward";
+  static const String FIELDING = "Fielding";
 }

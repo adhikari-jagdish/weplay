@@ -15,21 +15,17 @@ class Profile extends StatefulWidget {
 }
 
 class _ProfileState extends State<Profile> {
-  TextEditingController _usernameController, _nameController;
-
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    _usernameController = TextEditingController();
-    _nameController = TextEditingController();
   }
 
   @override
   Widget build(BuildContext context) {
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: SystemUiOverlayStyle(
-        statusBarColor: Colors.white,
+        statusBarColor: Colors.grey,
       ),
       child: Scaffold(
         backgroundColor: Colors.white,
@@ -39,6 +35,8 @@ class _ProfileState extends State<Profile> {
               Container(
                 decoration: BoxDecoration(
                   image: DecorationImage(
+                      colorFilter: ColorFilter.mode(
+                          Colors.blue.withOpacity(0.4), BlendMode.srcOver),
                       image: ExactAssetImage(ImagePaths.PROFILE_HEADER_IMAGE),
                       fit: BoxFit.cover),
                 ),
@@ -75,7 +73,7 @@ class _ProfileState extends State<Profile> {
               shape: BoxShape.circle,
               image: DecorationImage(
                   image: ExactAssetImage(ImagePaths.WEPLAY_PROFILE_IMAGE),
-                  fit: BoxFit.cover),
+                  fit: BoxFit.fill),
             ),
           ),
           SizedBox(width: 25.0),
@@ -107,8 +105,9 @@ class _ProfileState extends State<Profile> {
   ///Playing Position and Location
   Widget _location() {
     return Padding(
-      padding: EdgeInsets.fromLTRB(90.0, 25.0, 10.0, 0),
+      padding: EdgeInsets.fromLTRB(90.0, 25.0, 20.0, 0),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
             CustomStrings.GOALKEEPER,
@@ -117,26 +116,29 @@ class _ProfileState extends State<Profile> {
               color: Colors.white,
             ),
           ),
-          SizedBox(width: 35.0),
-          Container(
-            width: 30.0,
-            height: 30.0,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              image: DecorationImage(
-                  image: ExactAssetImage(ImagePaths.ICON_MAP),
-                  fit: BoxFit.cover),
-            ),
-          ),
-          SizedBox(width: 10.0),
-          Text(
-            CustomStrings.LOCATION,
-            textAlign: TextAlign.right,
-            style: TextStyle(
-              fontSize: 18.0,
-              color: Colors.white,
-            ),
-          ),
+          Row(
+            children: [
+              Container(
+                width: 30.0,
+                height: 30.0,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  image: DecorationImage(
+                      image: ExactAssetImage(ImagePaths.ICON_MAP),
+                      fit: BoxFit.cover),
+                ),
+              ),
+              SizedBox(width: 5.0),
+              Text(
+                CustomStrings.LOCATION,
+                textAlign: TextAlign.right,
+                style: TextStyle(
+                  fontSize: 18.0,
+                  color: Colors.white,
+                ),
+              ),
+            ],
+          )
         ],
       ),
     );
@@ -145,9 +147,8 @@ class _ProfileState extends State<Profile> {
   ///Booking Cancelled NoShow Cards
   Widget _bookingSummarycards() {
     return Container(
-      padding: new EdgeInsets.only(top: 10.0, right: 10.0, left: 10.0),
+      padding: new EdgeInsets.only(top: 20.0, right: 15.0, left: 15.0),
       child: new Container(
-        height: 90.0,
         width: MediaQuery.of(context).size.width,
         child: GridView(
           primary: false,
@@ -155,7 +156,7 @@ class _ProfileState extends State<Profile> {
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 3,
             childAspectRatio: MediaQuery.of(context).size.width /
-                (MediaQuery.of(context).size.height / 2.5),
+                (MediaQuery.of(context).size.height / 2.1),
           ),
           children: <Widget>[
             Container(
@@ -190,7 +191,7 @@ class _ProfileState extends State<Profile> {
       //alignment: Alignment.topCenter,
       padding: new EdgeInsets.only(
           // top: MediaQuery.of(context).size.height * .47,
-          top: 20.0,
+          top: 5.0,
           right: 20.0,
           left: 20.0),
       child: new Container(
@@ -200,22 +201,25 @@ class _ProfileState extends State<Profile> {
           scrollDirection: Axis.horizontal,
           children: <Widget>[
             GamesList(
-              name: "Cash",
-              position: r"$1000.22",
+              image: ImagePaths.ICON_FUTSAL,
+              name: CustomStrings.FUTSAL,
+              position: CustomStrings.GOALKEEPER,
             ),
             SizedBox(
-              width: 10.0,
+              width: 20.0,
             ),
             GamesList(
-              name: "Card",
-              position: r"$450.25",
+              image: ImagePaths.ICON_FOOTBALL,
+              name: CustomStrings.FOOTBALL,
+              position: CustomStrings.FORWARD,
             ),
             SizedBox(
-              width: 10.0,
+              width: 20.0,
             ),
             GamesList(
-              name: "Paypal",
-              position: r"$100.33",
+              image: ImagePaths.ICON_CRICKET,
+              name: CustomStrings.CRICKET,
+              position: CustomStrings.FIELDING,
             ),
           ],
         ),
@@ -225,7 +229,7 @@ class _ProfileState extends State<Profile> {
 
   Widget _aboutPlayer() {
     return Card(
-      margin: EdgeInsets.all(10),
+      margin: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
       elevation: 3.0,
       // this field changes the shadow of the card 1.0 is default
       shape: RoundedRectangleBorder(
@@ -271,7 +275,7 @@ class _ProfileState extends State<Profile> {
     return Column(
       children: [
         Container(
-          width: 170.0,
+          width: 150.0,
           height: 250.0,
           decoration: BoxDecoration(
             shape: BoxShape.rectangle,

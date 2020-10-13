@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:weplay/utils/ImagePaths.dart';
 
 class GamesList extends StatelessWidget {
   final String name;
   final String position;
+  final String image;
 
   GamesList({
     Key key,
     @required this.name,
     @required this.position,
+    @required this.image,
   }) : super(key: key);
 
   @override
@@ -21,28 +22,28 @@ class GamesList extends StatelessWidget {
           decoration: BoxDecoration(
             shape: BoxShape.rectangle,
             image: DecorationImage(
-                image: ExactAssetImage(ImagePaths.ICON_FUTSAL),
-                fit: BoxFit.fill),
+                image: ExactAssetImage(image), fit: BoxFit.fill),
           ),
         ),
-        SizedBox(width: 25.0),
+        SizedBox(width: 15.0),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
               name,
               style: TextStyle(
-                  fontSize: 26.0,
+                  fontSize: 22.0,
                   color: Colors.black,
                   fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 5.0),
+            SizedBox(height: 2.0),
             Text(
               position,
               style: TextStyle(
-                  fontSize: 18.0,
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold),
+                fontSize: 16.0,
+                color: Colors.black,
+              ),
             ),
           ],
         )

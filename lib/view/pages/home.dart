@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:weplay/utils/CustomStrings.dart';
 import 'package:weplay/utils/ImagePaths.dart';
+import 'package:weplay/utils/custom_icons.dart';
 import 'package:weplay/view/pages/cart.dart';
 import 'package:weplay/view/pages/explore.dart';
 import 'package:weplay/view/pages/profile.dart';
@@ -77,15 +78,15 @@ class _HomeState extends State<Home> {
             activeColor: Colors.blueAccent,
           ),
           BottomNavyBarItem(
-              icon: Icon(Icons.assessment),
+              icon: Icon(MyCustomIcons.handshake),
               title: Text(CustomStrings.TITLE_UNITY),
               activeColor: Colors.blueAccent),
           BottomNavyBarItem(
-              icon: Icon(Icons.notifications),
+              icon: Icon(Icons.add_circle),
               title: Text(CustomStrings.TITLE_WEPLAY),
               activeColor: Colors.blueAccent),
           BottomNavyBarItem(
-              icon: Icon(Icons.add_shopping_cart),
+              icon: Icon(Icons.shopping_cart),
               title: Text(CustomStrings.TITLE_CART),
               activeColor: Colors.blueAccent),
           BottomNavyBarItem(
